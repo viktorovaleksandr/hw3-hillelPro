@@ -1,8 +1,8 @@
 // Дано двузначное число. Определить, какая из его цифр больше: первая или вторая?
 
-const numbers = +prompt('Enter any number?');
-const firstNumber = Math.floor(number / 10) % 10;
-const secondNumber = Math.floor(number / 1) % 10;
+const fullNumber = +prompt('Enter any number?');
+const firstNumber = Math.floor(fullNumber / 10) % 10;
+const secondNumber = Math.floor(fullNumber / 1) % 10;
 
 if (firstNumber > secondNumber) {
 	alert('First namber more second namber');

@@ -1,10 +1,11 @@
 // Дано трехзначное число. 
 
 // a)Верно ли, что все его цифры одинаковые? 
-const number = +prompt('Enter a three-digit number');
-const firstNumber = Math.floor(number / 100) % 10;
-const secondNumber = Math.floor(number / 10) % 10;
-const threeNumber = Math.floor(number / 1) % 10;
+const fullNumber = +prompt('Enter a three-digit number');
+const firstNumber = Math.floor(fullNumber / 100) % 10;
+const secondNumber = Math.floor(fullNumber / 10) % 10;
+const threeNumber = Math.floor(fullNumber / 1) % 10;
+
 if (firstNumber === secondNumber && firstNumber === threeNumber) {
 	alert('Аll 3 numbers are the same');
 } else {
