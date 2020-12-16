@@ -1,24 +1,26 @@
 // Дано трехзначное число. 
 // a)Верно ли, что все его цифры одинаковые? 
 const fullNumber = +prompt('Enter a three-digit number',123);
-const firstNumber = Math.floor(fullNumber / 100) % 10;
+const firstNumber = Math.floor(fullNumber / 100);
 const secondNumber = Math.floor(fullNumber / 10) % 10;
-const threeNumber = Math.floor(fullNumber / 1) % 10;
+const threeNumber = Math.floor(fullNumber % 10);
 
-if (firstNumber === secondNumber && firstNumber === threeNumber) {
-	alert('Аll 3 numbers are the same');
-} else {
-	alert('Аll 3 numbers is not the same');
-}
+const result = (isNaN(fullNumber))?'Incorrect input':
+(firstNumber === secondNumber && firstNumber === threeNumber)?'Аll 3 numbers are the same':
+'Аll 3 numbers is not the same';
+alert(result);
 
 // b)Есть ли среди его цифр одинаковые?
-if (firstNumber === threeNumber) {
-   alert(`${firstNumber} and ${threeNumber} the same`);
-} else if (firstNumber === secondNumber) {
-   alert(`${firstNumber} and ${secondNumber} the same`);  
-} else if (secondNumber === threeNumber) {
-   alert(`${secondNumber} and ${threeNumber} the same`);
+if (isNaN(fullNumber)) {
+	alert('Incorrect input');
 } else {
-	alert('No identical numbers found!');
+	if (firstNumber === threeNumber) {
+   	alert(`${firstNumber} and ${threeNumber} the same`);
+	} else if (firstNumber === secondNumber) {
+   	alert(`${firstNumber} and ${secondNumber} the same`);  
+	} else if (secondNumber === threeNumber) {
+   	alert(`${secondNumber} and ${threeNumber} the same`);
+	} else {
+		alert('No identical numbers found!');
+	}
 }
-
